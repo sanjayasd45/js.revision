@@ -1,13 +1,14 @@
-const names = ["John", "Jane", "Bob", "Alice", "Charlie"];
+let random = ["John", "Jane", "Bob", "Alice", "Charlie"];
 
-function logNamesWithDelay() {
-    names.forEach((name, index) => {
-        setTimeout(() => {
-            console.log(name);
-        }, index * 2000);
-    });
-}
+const randomN = (c) => {
+    let randomCollection = []
+    for(let i = 0; i < c ; i++){
+      const randomNumber = Math.floor(Math.random() * 3) + 1;
+      randomCollection.push(randomNumber)
+      random = randomCollection
+      console.log(random);
+    }
+  }
 
-
-logNamesWithDelay();
-
+randomN(5)
+randomN(4)
