@@ -10,7 +10,7 @@ const randomN = (c) => {
   let randomCollection = []
   for(let i = 0; i < c ; i++){
     const randomNumber = Math.floor(Math.random() * 3) + 1;
-    randomCollection.push(randomNumber)
+    randomCollection.push(colorId[randomNumber])
     random = randomCollection
     console.log(random);
   }
@@ -37,17 +37,19 @@ colors.forEach(color => {
   });
 
 let win  = () => {
-  if(newRandom[0] == colorId[+random[0]]){
+
+  if((JSON.stringify(random) === JSON.stringify(newRandom))){
     console.log('win');
+    newRandom = []
+    randomN(colorCount)
     for(let i = 0; i <colorCount; i++){
       setTimeout(() => {
-        changeColorForOneSecond(colorId[+random[i]])
+        changeColorForOneSecond(random[i])
         console.log(i);
       }, i*500);
+      colorCount = colorCount + 1
     }
-    colorCount = colorCount + 1
   }
-  randomN(colorCount)
 
 }
 
@@ -57,12 +59,11 @@ let win  = () => {
 startBtn.addEventListener('click', (e) => {
 randomN(1)
 
-for(let i = 0; i <colorCount; i++){
-    setTimeout(() => {
-        changeColorForOneSecond(colorId[+random[i]])
-        console.log(i);
-      }, i*500);
-}
+setTimeout(() => {
+  changeColorForOneSecond(random[0])
+}, 500);
+
+colorCount =  colorCount + 1
 })
 
 
