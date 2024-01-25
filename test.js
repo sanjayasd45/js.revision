@@ -12,3 +12,4 @@ const randomN = (c) => {
 
 randomN(5)
 randomN(4)
+randomN(10)
