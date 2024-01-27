@@ -1,69 +1,56 @@
-let colors = document.querySelectorAll('.colors');
-let startBtn = document.querySelector("button");
-let random = []
-let newRandom = []
-let colorId = ['simon_red','simon_green','simon_blue','simon_pink']
-let colorCount = 1
+const div = document.querySelectorAll('.colors');
+const heading = document.querySelector('#simon_h3')
+let randomCollection = [];
+let newRandom = [];
+const colorId = ['simon_red', 'simon_green', 'simon_blue', 'simon_pink'];
 
-
-const randomN = (c) => {
-  let randomCollection = []
-  for(let i = 0; i < c ; i++){
-    const randomNumber = Math.floor(Math.random() * 3) + 1;
-    randomCollection.push(colorId[randomNumber])
-    random = randomCollection
-    console.log(random);
-  }
-}
-function changeColorForOneSecond(divId) {
-    const div = document.querySelector(`#${divId}`);
-    const originalColor = div.style.backgroundColor;
-  
-    // Change the color of the div
-    div.style.backgroundColor = 'black';
-  
-    // Set a timeout to revert the color back to the original after one second
-    setTimeout(() => {
-      div.style.backgroundColor = originalColor;
-    }, 500);
-  }
-
-colors.forEach(color => {
-    color.addEventListener('click', (e) => {
-      console.dir(e.target.id);
+for(let i of div){
+  i.addEventListener('click', (e) => {
+    if(randomCollection.length != 0){
       newRandom.push(e.target.id)
-      win()
-    });
-  });
-
-let win  = () => {
-
-  if((JSON.stringify(random) === JSON.stringify(newRandom))){
-    console.log('win');
-    newRandom = []
-    randomN(colorCount)
-    for(let i = 0; i <colorCount; i++){
-      setTimeout(() => {
-        changeColorForOneSecond(random[i])
-        console.log(i);
-      }, i*500);
-      colorCount = colorCount + 1
+    }else{
+      heading.lastChild.textContent = 'Guess the correct sequence'
+      randomN()
+      changeColorForOneSecond(randomCollection[0])
     }
-  }
-
+    if(randomCollection.length === newRandom.length){
+      if (JSON.stringify(randomCollection) === JSON.stringify(newRandom)) {
+        heading.lastChild.textContent = `Level ${randomCollection.length}`
+        newRandom = []
+        randomN()
+        for (let i = 0; i < randomCollection.length; i++) {
+          setTimeout(() => {
+            changeColorForOneSecond(randomCollection[i]);
+          }, i * 500);
+        }
+        for(let i of colors){
+          
+        }
+      } else {
+        let score = randomCollection.length
+        heading.lastChild.textContent = `Bester luck for next time. \n Your Score is ${score} .\n Press any key to restart`
+        randomCollection = []
+      }
+    }else{
+      console.log('do nothing');
+    }
+  })
 }
 
+const randomN = () => {
+  const randomNumber = Math.floor(Math.random() * 4); // Use 4 to include the last element
+  randomCollection.push(colorId[+randomNumber]);
+};
 
+const changeColorForOneSecond = (divId) => {
+  const div = document.querySelector(`#${divId}`);
+  const originalColor = div.style.backgroundColor;
 
+  // Change the color of the div
+  div.style.backgroundColor = 'black';
 
-startBtn.addEventListener('click', (e) => {
-randomN(1)
-
-setTimeout(() => {
-  changeColorForOneSecond(random[0])
-}, 500);
-
-colorCount =  colorCount + 1
-})
-
-
+  // Set a timeout to revert the color back to the original after one second
+  setTimeout(() => {
+    div.style.backgroundColor = originalColor;
+  }, 500);
+};

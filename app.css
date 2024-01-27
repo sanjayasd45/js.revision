@@ -3,12 +3,19 @@ body{
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   background-color: rgb(181, 179, 179);
 }
 .flex{
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
+}
+.btn{
+   padding: 3px;
+   background: rgb(174, 174, 246);
+   border-radius: 3px;
+   cursor: pointer;
 }
 
 /* simon game */
