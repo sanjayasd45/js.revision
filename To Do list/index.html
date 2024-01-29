@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="./index.css">
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <h1>This is your to do list</h1>
-        <form>
-            <input placeholder="Add your TO DO">
-            <button id="add">Add</button>
-        </form>
-        <ol>
-            <li>This is frist task <button class="delete">delete</button></li>
-        </ol>
+    <div class="flex ">
+        <div class="flex">
+            <h1>This is your to do list</h1>
+            <form>
+                <input placeholder="Add your TO DO" id="input">
+                <button id="add" class="btn">Add</button>
+            </form>
+            <ul>
+                <li>This is frist task <button class="delete btn" >delete</button></li>
+            </ul>
+        </div>
+        <div>
+            <p>Type your additional notes</p>
+            <textarea placeholder="Type here" class="noteInput"></textarea>
+        </div>
     </div>
     
     <script src="index.js"></script>

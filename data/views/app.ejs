@@ -1,0 +1,45 @@
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <% for(name of newdata){   %>
+            <% if(name.gender == 'f') {  %>
+                <div class="main">
+                    <div class="content">
+                        <div class="whiteText"> </div>
+                       
+                        <p>समक्ष</p>
+                        <div class="header">
+                            <p>भारत निर्वाचन आयोग,</p>
+                            <p>निर्वाचन सदन, अशोक रोड,</p>
+                            <p>नई दिल्ली-110001.</p>
+                        </div>
+                        <p>
+                           <%=  name.pta  %> 
+                        </p>
+                        <ol>
+                            <li>मैं बहलफ़ बयान करती हूँ कि मैं राष्ट्रीय एकता पार्टी की एक सदस्य हूँ।</li>
+                            <li>मैं बहलफ़ बयान करती हूँ कि <%= name.vard  %> <%= name.kram  %> <%= name.bhag %> निर्वाचन संख्या - <%= name.vid  %>, विधानसभा क्षेत्र – <%= name.vidhan  %>, की एक पंजीकृत निर्वाचिका हूँ। </li>
+                            <li>मैं बहलफ़ ये बयान करती हूँ कि मैं भारत निर्वाचन आयोग के पास पंजीकृत किसी अन्य दल की सदस्य नहीं हूँ।</li>
+                            <li>मैं बहलफ़ बयान करती हूँ कि उक्त तथ्य मेरे इल्म जाति से सही व सत्य है।</li>
+                        </ol>
+                        <div class="futter">
+                            <div class="salutation">
+                                <p>ईश्वर मेरी मदद करें ।</p>
+                                <p>शपथिनी</p>
+                                <p>शपथिनी</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          <%  } %>
+     <%   }    %>
+</body>
+</html>

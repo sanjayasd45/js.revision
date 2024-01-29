@@ -1,6 +1,6 @@
 let btn = document.querySelector("#add");
-let inp = document.querySelector("input");
-let list = document.querySelector("ol");
+let inp = document.querySelector("#input");
+let list = document.querySelector("ul");
 let delBtn = document.querySelectorAll(".delete");
 
 
@@ -14,11 +14,16 @@ const addRow = (e) => {
   newButton.innerText = 'delete';
   newTask.appendChild(newButton)
   newButton.classList.add("delete")
+  newButton.classList.add("btn")
 }
 btn.addEventListener("click", function (e) {
   e.preventDefault();
-  addRow(inp.value)
-  inp.value = ''
+  if(inp.value === ''){
+    alert('Enter task to add!')
+  }else{
+    addRow(inp.value)
+    inp.value = ''
+  }
 });
 
 list.addEventListener("click", (e) => {

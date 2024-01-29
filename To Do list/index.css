@@ -1,0 +1,49 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(228, 224, 224);
+    
+ }
+ .flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+
+textarea {
+    padding: 10px;
+    margin: 5px 0;
+    width: 100vh;
+    min-height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical; /* Allow vertical resizing only */
+  }
+  textarea:focus {
+    outline: none;
+    border-color: #007bff; /* Change the border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box shadow on focus */
+  }
+  .btn{
+    padding: 3px;
+    background: rgb(174, 174, 246);
+    border-radius: 3px;
+    cursor: pointer;
+ }
+
+ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    margin-left: -50px;
+}
+ul li button{
+    margin-left: 10px;
+}

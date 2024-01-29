@@ -31,4 +31,35 @@ async function getActivity() {
 
 btnActivity.addEventListener('click', async () => {
     let activity = await getActivity()
+    let p = document.querySelector('#activity')
+    p.innerText = activity.data.activity
 })
+
+// predict gender
+
+let genderUrl = 'https://api.genderize.io/?name='
+async function genderFinder(name) {
+    try{
+        let res = await axios.get(genderUrl+name)
+        return res
+    }catch(e){
+        let pGender = document.querySelector('#gender')
+        pGender.innerText = 'Sorry request limit reached' 
+    }
+}
+
+let btnGender = document.querySelector('#btnGender')
+let inputName = document.querySelector('#genderFinder')
+inputName.addEventListener('change', (e) => {
+    let name = e.target.value
+        btnGender.addEventListener('click', async () => {
+            let gender = await genderFinder(name)
+            let pName = document.querySelector('#name')
+            let pGender = document.querySelector('#gender')
+            pName.innerText = 'Name :- ' + name
+            pGender.innerText = 'Gender :- ' +  gender.data.gender
+            inputName.value = ''
+        })
+})
+
+// 
