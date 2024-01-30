@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="head">
+        <h3>This is Blog App</h3>
+        <a href="/">Write a new post</a>
+    </header>
+    <div class="main01">
+        <% for(i of user)  { %>
+            <div class="main">
+                <div class="card">
+                    <img src="<%= i.url %>" alt="This is img">
+                    <p><%= i.content %><a href="/">view more</a></p>
+                    <div class="cardAuthor">
+                        <span>@<%= i.username  %></span>
+                        <span><%= i.date  %></span>
+                    </div>
+                </div>
+            </div>  
+        <% } %>
+    </div>
+</body>
+</html>
