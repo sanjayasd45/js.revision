@@ -12,6 +12,12 @@ app.get('/', (req, res) => {
     const data = require("./work.json")
     const newdata = data.names
     console.log(newdata);
+    res.render('test.ejs',{newdata});
+})
+app.get('/female', (req, res) => {
+    const data = require("./work.json")
+    const newdata = data.names
+    console.log(newdata);
     res.render('app.ejs',{newdata});
 })
 
