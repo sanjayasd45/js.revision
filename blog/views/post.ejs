@@ -8,17 +8,21 @@
 </head>
 <body>
     <header class="head">
-        <h3>This is Blog App</h3>
+        <a href="/" class="heading">This is Blog App</a>
         <a href="/">Write a new post</a>
     </header>
     <div>
   
         <h3>Your post editor</h3>
-        <form>
+        <form method="post" action="/">
+            <label >Image url</label><br>
+            <input placeholder="enter image url" name="url"><br><br>
+            <label >Topic</label><br>
+            <input placeholder="enter topic of the post" name="topic"><br><br>
             <label for="">Your username</label><br>
-            <input placeholder="Enter username"> <br><br>
+            <input placeholder="Enter username" name="username"> <br><br>
             <label for="">Your Post detailes</label> <br>
-            <textarea placeholder="Enter post content"></textarea><br><br>
+            <textarea placeholder="Enter post content" name="content"></textarea><br><br>
             <button>Add post</button>
         </form>
     </div>

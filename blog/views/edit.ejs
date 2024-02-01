@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit post</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="head">
+        <a href="/" class="heading">This is Blog App</a>
+        <a href="/">Write a new post</a>
+    </header>
+    <div>
+  
+        <h3>Your post editor</h3>
+        <form method="post" action="/<%=data.id %>?_method=PATCH">
+            <label for="url">Image url</label><br>
+            <input placeholder="enter image url" name="url" value="<%=data.url  %>"><br><br>
+            <label for="topic" >Topic</label><br>
+            <input placeholder="enter topic of the post" name="topic" value="<%=data.topic %>"><br><br>
+            <p >Your username : @<%= data.username  %></p><br><br>
+            <label for="content">Your Post detailes</label> <br>
+            <textarea rows="10" cols="40"  placeholder="Enter post content" name="content" ><%= data.content %></textarea><br><br>
+            <button>Edit Post</button>
+        </form>
+    </div>
+</body>
+</html>
+
