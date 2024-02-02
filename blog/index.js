@@ -78,7 +78,7 @@ app.post('/', (req, res) =>{
 })
 app.get('/:id', (req, res) =>{
     let {id} = req.params
-    let data = user.find((p) => id ===p.id);
+    let data = user.find((p) => id === p.id);
     res.render("postDetails.ejs", {data})
 })
 app.get('/:id/edit', (req, res) =>{

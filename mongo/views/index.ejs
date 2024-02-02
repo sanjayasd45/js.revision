@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whats App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>All Chats</h3>
+    <a href="chats/new" >New Chat</a>
+    <% for(i of chats){ %>
+        <div class="chats">
+            <p>From : <%= i.from  %></p>
+            <p>Message : <%= i.msg  %></p>
+            <p>To : <%= i.to  %></p>
+            <span>Day & Date : <%= i.created_at.toString().split(" ").slice(0,4).join("-")  %> ,</span>
+            <span>Time : <%= i.created_at.toString().split(" ")[4]  %></span>
+            <span><a href="/chats/<%=i._id  %>/edit">Edit Your Message</a></span>
+            <form method="POST" action="/chats/<%=i._id  %>?_method=DELETE">
+                <button>Delete Your Message </button>
+            </form>
+        </div>
+        <% } %>
+</body>
+</html>
+
+
