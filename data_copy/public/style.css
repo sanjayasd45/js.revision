@@ -1,4 +1,55 @@
-body{
+body {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
     margin: 0;
-    padding: 0;
+    background-color: #f0f0f0; /* Set a background color, change as needed */
 }
+
+.main {
+    text-align: center;
+    margin-top: 50px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db; /* Blue color, change as needed */
+    color: #fff; /* White text, change as needed */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker shade of blue on hover, change as needed */
+}
+
+div {
+    border: 1px solid #3498db; /* Blue border for each data container, change as needed */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #3498db; /* Blue color for links, change as needed */
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Add more styling as needed */

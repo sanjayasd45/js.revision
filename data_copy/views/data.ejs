@@ -1,0 +1,100 @@
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body{
+    background: grey;
+}
+.whiteText{
+    color: #ffff;
+    min-height: 477px;
+}
+.main{
+    /* margin-left: 50px; */
+    font-size: 17px;
+    min-height: 993px;
+    min-width: 595px;
+    background-color: aqua;
+    padding: 10px 10px 11px 10px;
+    border: 2px solid rgb(255, 255, 255);
+}
+.content{
+    margin-left: 47px;
+    padding-right: 10px;
+}
+.header{
+    margin-left: 2rem;
+    margin-top: -14px;
+}
+.header p{
+    margin-bottom: -13px;
+}
+.futter{
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    margin-top: -15px;
+}
+
+.salutation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -15px;
+    margin-left: 15px;
+}
+@media print {
+    /* p {
+      page-break-inside: avoid;
+    } */
+    /* .main{
+        /* margin-bottom: -50px; */
+        /* margin-top: -16px; */
+    /* } */ 
+
+  }
+  ol {
+    margin-top: -12px;
+  }
+    </style>
+</head>
+<body>
+        <% for(data of data){   %>
+                <div class="main">
+                    <div class="content">
+                        <div class="whiteText"> </div>
+                       
+                        <p>समक्ष</p>
+                        <div class="header">
+                            <p>भारत निर्वाचन आयोग,</p>
+                            <p>निर्वाचन सदन, अशोक रोड,</p>
+                            <p>नई दिल्ली-110001.</p>
+                        </div>
+                        <p>
+                           <%=  data.r1  %> 
+                        </p>
+                        <ol>
+                            <li>मैं बहलफ़ बयान करती हूँ कि मैं राष्ट्रीय एकता पार्टी की एक सदस्य हूँ।</li>
+                            <li><%= data.r2  %></li>
+                            <li>मैं बहलफ़ ये बयान करती हूँ कि मैं भारत निर्वाचन आयोग के पास पंजीकृत किसी अन्य दल की सदस्य नहीं हूँ।</li>
+                            <li>मैं बहलफ़ बयान करती हूँ कि उक्त तथ्य मेरे इल्म जाति से सही व सत्य है।</li>
+                        </ol>
+                        <div class="futter">
+                            <div class="salutation">
+                                <p>ईश्वर मेरी मदद करें ।</p>
+                                <p>शपथिनी</p>
+                                <p>शपथिनी</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          <%  } %>
+</body>
+</html>

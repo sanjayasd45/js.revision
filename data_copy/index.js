@@ -71,5 +71,9 @@ app.delete('/:id', (req, res) => {
     }).catch((err) => console.log(err))
     res.redirect('/')
 })
+app.get('/print', async (req, res) => {
+    let data = await Data.find()
+    res.render("data.ejs", {data})
+})
 
 app.listen(3000, () => console.log("Done"));
