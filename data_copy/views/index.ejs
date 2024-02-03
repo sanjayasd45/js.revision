@@ -9,19 +9,26 @@
 <body>
     <div class="main">
         <form method="POST" action="/">
-            <textarea placeholder="row1" name="r1"></textarea> 
-            <textarea placeholder="row2" name="r2"></textarea> 
+            <input placeholder="gender" name="gender" value="m"><br>
+            <textarea rows="3" cols="50" placeholder="row1" name="r1"></textarea><br> 
+            <textarea rows="3" cols="50" placeholder="row2" name="r2"></textarea><br>
             <button>Submit</button>
         </form>
-        <% for(i of data){ %>
-            <div>
-                <p><%= i.r1  %></p>
-                <p><%= i.r2  %></p>
-            </div>
-            <a href="/<%=i._id%>/edit">Edit</a>
-            <form method="POST" action="/<%=i._id%>?_method=DELETE">
-                <button>Detele</button>
+            <form method="GET" action="/">
+                <input placeholder="Gender" name="gender">
+                <button>Submit</button>
             </form>
+        <% for(i of data){ %>
+            <div class="data">
+                <div >
+                    <p><%= i.r1  %></p>
+                    <p><%= i.r2  %></p>
+                </div>
+                <a href="/<%=i._id%>/edit">Edit</a>
+                <form method="POST" action="/<%=i._id%>?_method=DELETE">
+                    <button>Detele</button>
+                </form>
+            </div>
         <% } %>
     </div>
 </body>

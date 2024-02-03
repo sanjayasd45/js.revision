@@ -28,6 +28,7 @@ mongoose.connect(`mongodb+srv://sanjayasd45:${password}@datacluster.lgoji1f.mong
 // })
 
 const dataSchema = new mongoose.Schema({
+    gender: String,
     r1: String,
     r2: String
 })
@@ -38,8 +39,9 @@ const Data = mongoose.model("Data", dataSchema);
 //     await mongoose.connect("mongodb://127.0.0.1:27017/dataCopy")
 // }
 app.post('/', (req, res) => {
-    let data = req.body
-    let newData = new Data({...data})
+    let data = req.body;
+    let { gender, r1, r2 } = data;
+    let newData = new Data({ gender: gender.trim(), r1, r2 });
     newData.save().then((res) => {
         console.log("saved");
     }).catch((res) => {
@@ -48,8 +50,16 @@ app.post('/', (req, res) => {
     res.redirect('/')
 })
 app.get('/', async (req, res) => {
-    let data = await Data.find()
-    res.render('index.ejs', {data})
+    if(req.query.gender === 'f'){
+        let data = await Data.find({gender: "f"})
+        res.render('index.ejs', {data})
+    } else if(req.query.gender === 'm'){
+        let data = await Data.find({gender: "m"})
+        res.render('index.ejs', {data})
+    }else{
+        let data = await Data.find()
+        res.render('index.ejs', {data})
+    }
 })
 
 app.get('/:id/edit',async (req, res) => {
@@ -60,7 +70,7 @@ app.get('/:id/edit',async (req, res) => {
 app.put('/:id', async (req, res) => {
     let {id} = req.params
     let msg = req.body
-    let update = await Data.findByIdAndUpdate(id, {r1:msg.r1, r2:msg.r2},{new:true})
+    let update = await Data.findByIdAndUpdate(id, {gender:msg.gender.trim(),r1:msg.r1, r2:msg.r2},{new:true})
     res.redirect('/')
 })
 app.delete('/:id', (req, res) => {
@@ -70,6 +80,14 @@ app.delete('/:id', (req, res) => {
         console.log(res);
     }).catch((err) => console.log(err))
     res.redirect('/')
+})
+app.get('/print/f', async (req, res) => {
+        let data = await Data.find({gender:'f'})
+        res.render('printf.ejs', {data})
+})
+app.get('/print/m', async (req, res) => {
+        let data = await Data.find({gender:'m'})
+        res.render('printm.ejs', {data})
 })
 
 app.listen(3000, () => console.log("Done"));

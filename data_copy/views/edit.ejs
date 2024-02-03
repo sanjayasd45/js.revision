@@ -4,14 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light Blue background color */
+    color: #000080; /* Navy Blue text color */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.main {
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+textarea,
+button {
+    margin: 10px;
+    padding: 8px;
+}
+
+button {
+    background-color: #000080; /* Navy Blue button color */
+    color: #ffffff; /* White text color for the button */
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #001f3f; /* Darker shade of Navy Blue on hover */
+}
+
+
+    </style>
 </head>
 <body>
     <div class="main">
         <form method="POST" action="/<%=data._id%>?_method=PUT">
-            <textarea placeholder="row1" name="r1"><%= data.r1  %></textarea> 
-            <textarea placeholder="row2" name="r2"><%= data.r2  %></textarea> 
-            <button>Save changes</button>
+            <input name="gender" value="<%=data.gender  %>"><br>
+            <textarea rows="5" cols="45" placeholder="row1" name="r1"><%= data.r1  %></textarea> <br>
+            <textarea rows="5" cols="45" placeholder="row2" name="r2"><%= data.r2  %></textarea> <br>
+            <button>Save changes</button> 
         </form>
     </div>
 </body>

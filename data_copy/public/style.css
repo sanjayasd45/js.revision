@@ -1,4 +1,54 @@
-body{
+body {
+    background-color: #f0f8ff; /* Light Blue background color */
+    color: #000080; /* Navy Blue text color */
+    font-family: Arial, sans-serif; /* Use a sans-serif font */
+    display: flex;
+    justify-content: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
+}
+
+.main {
+    text-align: center;
+    width: 920px;
+}
+
+form {
+    margin-top: 20px; /* Add some top margin to the form */
+}
+
+input,
+textarea,
+button {
+    margin: 5px; /* Add margin to input, textarea, and button */
+    padding: 8px; /* Add padding for a comfortable look */
+}
+
+button {
+    background-color: #000080; /* Navy Blue button color */
+    color: #ffffff; /* White text color for the button */
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #001f3f; /* Darker shade of Navy Blue on hover */
+}
+
+div {
+    background-color: #add8e6; /* Light Blue background for div *//* Add padding to div for spacing */
+    margin: 10px; /* Add margin to create space between divs */
+}
+
+a {
+    color: #000080; /* Navy Blue link color */
+    text-decoration: none;
+    margin: 5px;
+}
+
+a:hover {
+    text-decoration: underline; /* Underline link on hover */
+}
+.data{
+    border: 3px solid royalblue;
 }
