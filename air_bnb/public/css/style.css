@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik&display=swap');
+:root {
+    --color-redShade: rgb(255, 56, 92);
+    --color-greyShade : rgb(113, 113, 113);
+    --color-blockShade : rgb(34, 34, 34);
+    --color-onhover : rgb(240, 239, 239);
+  }
+
+
+  
+body {
+  /* font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif; */
+  font-family: 'Rubik', sans-serif;
+  color: var(--color-blockShade);
+  margin: 0;
+  padding: 0;
+  /* padding: 0 4rem; */
+}
+.main01{
+  width: 100%;
+  height: 100vh;
+}
+.navTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.navTop img{
+  margin-left: 4rem;
+}
+.navTopBtn{
+  margin-right: 4rem;
+}
+img{
+  height: 4.2rem;
+}
+
+.navTopBtn a,
+.navTopBtn i,
+.navTopI a{
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  color: var(--color-blockShade);
+}
+.navTopI a:hover,
+.navTopBtn a:hover{
+  background-color: var(--color-onhover);
+  border-radius: 2rem;
+}
+.n:hover{
+  background-color: var(--color-onhover);
+  border-radius: 2rem;
+}
+
+.navTopBtnOpt{
+  padding: 0.2rem 0.5rem 0.2rem 0rem;
+  border-radius: 2rem;
+  border: 1px solid var(--color-onhover);
+  margin-left:  2px;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+.navTop i {
+  color: var(--color-blockShade);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.navTopBtnx{
+  position: relative;
+}
+.navTopBtnOpt:hover{
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+.navTopBtnOptC{
+  position: absolute;
+  right: 0%;
+  padding: 0.8rem 0rem;
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.9rem;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease; 
+  pointer-events: none;
+  z-index: 2;
+}
+.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 3;
+}
+
+/* Content Icons */
+.conIcons{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.conIconsMain{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 4rem;
+}
+.con_Icons{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.conIconsMain div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+}
+.conIconsMain div i{
+  font-size: 1.5rem;
+}
+.conIconsMain div p{
+  font-size: 0.7rem;
+}
+.conIconsMain div i{
+  margin-top: 1rem;
+  margin-bottom: -0.2rem;
+}
+/* .conIconsMain span p
+.conIconsMain span i */
+.conIconsMain div div{
+  position: relative;
+  bottom: 0;
+}
+
+.conIconsMain div{
+  padding: 0 5px;
+  margin-left: 2px;
+}
+.conIconsFilter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  font-size: 0.9rem;
+  margin-right: 4rem;
+  padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+  border: 1px solid var(--color-onhover);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.conIconsFilter i {
+  margin-right: 0.5rem;
+}
+.conIconsFilter span{
+  font-size: 0.7rem;
+}
+
+.conContent{
+  width: 100%;
+}
+
+.main{
+  margin-bottom: 2rem;
+}
+.card{
+  height: 364px;
+  width: 274px;
+  overflow: hidden;
+  padding-bottom: 5px;
+  color: var(--color-blockShade);
+  font-size: 0.9rem;
+  line-height: 0.4;
+}
+.card img{
+  height: 274px;
+  width: 274px;
+  margin-bottom: 0.8rem;
+  border-radius: 5px;
+}
+.card p{
+  margin-top: 2px;
+  margin-left: 2px;
+}
+.conContent{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  margin-top: 0.6rem;
+  max-width: calc(100% - 8rem);
+}
+.card_r1{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.card_r1 div{
+  display: flex;
+}
+.card_r2{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.card_r2 p{
+  margin-top: 4px;
+}
+.card_r1 div p{
+  margin-top: 4px;
+}
+
+.footer{
+  background-color: var(--color-onhover);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 8rem);
+  padding: 0 4rem;
+}
+.footer p {
+  font-weight: 100;
+  font-size: 0.9rem;
+}
+  
