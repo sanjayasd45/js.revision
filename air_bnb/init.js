@@ -330,4 +330,3 @@ mongoose.connect(`mongodb+srv://sanjayasd45:${password}@datacluster.lgoji1f.mong
 // ])
 
 // Listing.insertMany(listingData)
-Listing.find({})
