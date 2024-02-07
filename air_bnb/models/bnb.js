@@ -19,7 +19,7 @@ const listingSchema = new mongoose.Schema({
         required: true
     },
     price: {
-        type: String,
+        type: Number,
         required: true
     },
     d_or_n:{
@@ -32,10 +32,14 @@ const listingSchema = new mongoose.Schema({
     wishlist: {
         type: Boolean,
         require: true
+    },
+    category:{
+        type:String,
+        require:true
     }
 })
 
-const categoryShema = new mongoose.Schema({
+const categorySchema = new mongoose.Schema({
     icon: {
         type: String,
         required: true
@@ -48,5 +52,5 @@ const categoryShema = new mongoose.Schema({
 
 
 const Listing = mongoose.model("Listing", listingSchema)
-const Category = mongoose.model("Category", categoryShema);
+const Category = mongoose.model("Category", categorySchema);
 module.exports = {Listing , Category};

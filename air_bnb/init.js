@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
-const {Listing , Cotegory} = require('./models/bnb.js')
+const {Listing , Category} = require('./models/bnb.js')
 const password = encodeURIComponent("@123barisH");
+const express = require('express')
+
+
+const app = express()
 
 mongoose.connect(`mongodb+srv://sanjayasd45:${password}@datacluster.lgoji1f.mongodb.net/bnb?retryWrites=true&w=majority`)
   .then(() => {
@@ -10,323 +14,30 @@ mongoose.connect(`mongodb+srv://sanjayasd45:${password}@datacluster.lgoji1f.mong
     console.log(`Error connecting to MongoDB Atlas: ${err}`);
   });
 
-// const listingData = ([
-//     {
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     },{
-//         img: 'https://img.freepik.com/free-vector/decorative-golden-mandala-red-background_1035-25425.jpg?w=826&t=st=1707229133~exp=1707229733~hmac=99c06f2e40a00ce6737fbe8e9aa3969ac12ddbf2208a6608a910b765c8005c9a',
-//         location: 'New yark',
-//         elevation: 5000,
-//         date: '10-12 jan',
-//         price: 5000,
-//         d_or_n: 'night',
-//         rating: 4.5,
-//         wishlish: false
-//     }
-// ])
 
-// Listing.insertMany(listingData)
+async function finder() {
+  try{
+    // await Listing.deleteMany({}, { bufferTimeoutMS: 30000 });
+    let data = await Listing.find({})
+    // await Listing.insertMany(data).then( () => {
+    //   console.log('Done');
+    // })
+    // let data = await Category.find({})
+    console.log(data);
+
+    // console.log(data);
+  }catch(e){
+    console.log(e);
+  }
+  
+}
+app.get(('/'), (req, res) => {
+  res.send('hi its me')
+})
+
+app.listen(5000, (e) => {
+  console.log('done');
+})
+
+finder()
+

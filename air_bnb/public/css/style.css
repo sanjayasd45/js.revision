@@ -2,17 +2,16 @@
 :root {
     --color-redShade: rgb(255, 56, 92);
     --color-greyShade : rgb(113, 113, 113);
-    --color-blockShade : rgb(34, 34, 34);
+    --color-blackShade : rgb(34, 34, 34);
     --color-onhover : rgb(240, 239, 239);
   }
-
 
   
 body {
   /* font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto', sans-serif; */
   font-family: 'Rubik', sans-serif;
-  color: var(--color-blockShade);
+  color: var(--color-blackShade);
   margin: 0;
   padding: 0;
   /* padding: 0 4rem; */
@@ -43,7 +42,7 @@ img{
 .navTopI a{
   padding: 0.7rem 1rem;
   text-decoration: none;
-  color: var(--color-blockShade);
+  color: var(--color-blackShade);
 }
 .navTopI a:hover,
 .navTopBtn a:hover{
@@ -65,7 +64,7 @@ img{
   position: relative;
 }
 .navTop i {
-  color: var(--color-blockShade);
+  color: var(--color-blackShade);
   font-size: 1rem;
   cursor: pointer;
 }
@@ -110,6 +109,7 @@ img{
   align-items: center;
   justify-content: space-between;
   margin-left: 4rem;
+  color: var(--color-greyShade);
 }
 .con_Icons{
   width: 100%;
@@ -119,34 +119,33 @@ img{
   align-items: center;
 }
 
-.conIconsMain div{
+.conIconsMain a{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: sticky;
+  padding: 0 5px;
+  margin-left: 2px;
+  color: var(--color-greyShade);
+  text-decoration: none;
 }
-.conIconsMain div i{
+.conIconsMain a i{
   font-size: 1.5rem;
 }
-.conIconsMain div p{
+.conIconsMain a p{
   font-size: 0.7rem;
 }
-.conIconsMain div i{
+.conIconsMain a i{
   margin-top: 1rem;
   margin-bottom: -0.2rem;
 }
 /* .conIconsMain span p
 .conIconsMain span i */
-.conIconsMain div div{
+.conIconsMain a div{
   position: relative;
   bottom: 0;
 }
 
-.conIconsMain div{
-  padding: 0 5px;
-  margin-left: 2px;
-}
 .conIconsFilter{
   display: flex;
   justify-content: center;
@@ -171,14 +170,14 @@ img{
 }
 
 .main{
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 .card{
   height: 364px;
   width: 274px;
   overflow: hidden;
   padding-bottom: 5px;
-  color: var(--color-blockShade);
+  color: var(--color-blackShade);
   font-size: 0.9rem;
   line-height: 0.4;
 }

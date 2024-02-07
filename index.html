@@ -1,218 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>Icon Slider</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card {
+        position: relative;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
 
-<div class="slider-container">
-    <button class="slider-button" onclick="slideLeft()">&#8249;</button>
-    <div class="conIconsMain">
-        <!-- Your existing divs with icons go here -->
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
+      .like-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+      }
+
+      .like-button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        color: #555;
+      }
+
+      .like-button.active {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="card">
+        <div class="like-btn">
+          <button class="like-button">
+            <i class="fa fa-heart"></i>
+          </button>
         </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
+        <img
+          src="https://img.freepik.com/free-photo/golden-frame-blue-background_53876-92990.jpg?w=740&t=st=1707217065~exp=1707217665~hmac=52405ed4c58794ca880ef320da23888bdccea261ebbf68e6e89faf0857ddbfef"
+          alt="This is img"
+        />
+        <div class="card_r1">
+          <p>Uttar Pradesh</p>
+          <div>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <p>4.5</p>
+          </div>
         </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
+        <p>3150 m elevation</p>
+        <p>6-11 Feb</p>
+        <div class="card_r2">
+          <i class="fa fa-inr" aria-hidden="true"></i>
+          <p>100</p>
+          <p>night</p>
         </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
-        <div>
-            <i class="fa fa-calculator" aria-hidden="true"></i>
-            <p>Historical homes</p>
-            <div class="lineDiv"></div>
-        </div>
+      </div>
     </div>
-    <button class="slider-button" onclick="slideRight()">&#8250;</button>
-</div>
-
-<script>
-    let currentIndex = 0;
-
-    function slideLeft() {
-        currentIndex = Math.max(currentIndex - 1, 0);
-        updateSlider();
-    }
-
-    function slideRight() {
-        const totalItems = document.querySelectorAll('.conIconsMain > div').length;
-        currentIndex = Math.min(currentIndex + 1, totalItems - 1);
-        updateSlider();
-    }
-
-    function updateSlider() {
-        const container = document.querySelector('.conIconsMain');
-        const itemWidth = 70; // Adjust this value based on your requirements
-        const newPosition = -currentIndex * itemWidth;
-        container.style.transform = `translateX(${newPosition}%)`;
-    }
-</script>
-
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const likeButtons = document.querySelectorAll(".like-button");
+        likeButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            this.classList.toggle("active");
+          });
+        });
+      });
+    </script>
+  </body>
 </html>

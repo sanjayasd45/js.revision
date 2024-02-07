@@ -1,3 +1,4 @@
+
 document.addEventListener("click", (e) => {
     let drop = e.target.matches("[dropB]")
     const navElements = document.querySelectorAll('.navTopBtnOptC');
@@ -12,24 +13,34 @@ document.addEventListener("click", (e) => {
 })
 
 
+const a = document.querySelectorAll('.categories');
+let categoryData;
+// function finder() {
+//     a.forEach(category => {
+//         category.addEventListener('click', (e) => {
+//            let pTag = category.querySelector('p');
+//            let selectedContent = pTag.textContent;
+//            categoryData = selectedContent
+//         })
+//     })
+// }
+// function finder() {
+//     let firstElementProcessed = false; // Flag to track if the first element has been processed
+//     a.forEach(category => {
+//         category.addEventListener('click', (e) => {
+//             let pTag = category.querySelector('p');
+//             let selectedContent = pTag.textContent;
+//             categoryData = selectedContent;
 
-const next = document.querySelectorAll('.arrow');
+//             if (!firstElementProcessed) {
+//                 category.classList.add('active'); // Add the 'active' class to the first element
+//                 firstElementProcessed = true; // Update the flag
+//             }
+//         });
+//     });
+// }
+// finder()
 
-const nextButtons = document.querySelectorAll('.arrow');
 
-nextButtons.forEach(next => {
-    next.addEventListener('click', (e) => {
-        console.log(e.target.parentElement.id);
 
-        const conTconMain = document.querySelector('.conIconsMain');
-        const children = conTconMain.children;
-
-        for (let i = 0; i < children.length; i++) {
-            const child = children[i];
-            console.log(child.classList[i]);
-            child.classList.add('translate-example');
-        }
-        console.log(children.length);
-    });
-});
 

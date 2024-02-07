@@ -21,12 +21,7 @@
     width: 100%;
     background-color: var(--color-onhover);
 }
-.arrow{
-    
-}
-.translate-example {
-    display: none;
-}
-.categories{
-    display: none;
+
+.activeColor{
+    color:  rgb(39 37 37)  !Important;
 }

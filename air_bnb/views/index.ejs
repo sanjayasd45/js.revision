@@ -51,52 +51,41 @@
             <div class="conIcons">
                 <div class="con_Icons">
                     <div class="conIconsMain">
-                        <div class="categories">
-                            <i class="fa fa-calculator" aria-hidden="true"></i>
-                            <p>Historical homes</p>
-                            <div class="lineDiv"></div>
-                        </div>
-                        <div class="categories">
-                            <i class="fa fa-calculator" aria-hidden="true"></i>
-                            <p>Historical homes</p>
-                            <div class="lineDiv"></div>
-                        </div>
-                        <div class="categories">
-                            <i class="fa fa-calculator" aria-hidden="true"></i>
-                            <p>Historical homes</p>
-                            <div class="lineDiv"></div>
-                        </div>
-                        <div class="categories">
-                            <i class="fa fa-calculator" aria-hidden="true"></i>
-                            <p>Historical homes</p>
-                            <div class="lineDiv"></div>
-                        </div>
-                    </div>
+                    <% for(j of data1) { %>
+                            <a  class="categories " href="/c/<%= j._id  %>">
+                                <i class="fa <%= j.icon  %>" aria-hidden="true"></i>
+                                <p><%= j.tagline %></p>
+                                <div class="lineDiv"></div>
+                            </a>
+                    <% } %>
+                </div>
                     <div class="conIconsFilter">
                         <i class="fa fa-sliders" aria-hidden="true"></i>
                         <span>Filter</span>
                     </div>
                 </div>
                 <div class="conContent">
-                    <div class="main">
-                        <div class="card">
-                            <img src="https://img.freepik.com/free-photo/golden-frame-blue-background_53876-92990.jpg?w=740&t=st=1707217065~exp=1707217665~hmac=52405ed4c58794ca880ef320da23888bdccea261ebbf68e6e89faf0857ddbfef" alt="This is img">
-                            <div class="card_r1">
-                                <p>Uttar pradesh</p>
-                                <div>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <p>4.5</p>
+                    <% for(i of data) { %>
+                        <div class="main">
+                            <div class="card">
+                                <img src="<%= i.img  %>" alt="This is img">
+                                <div class="card_r1">
+                                    <p><%=i.location%></p>
+                                    <div>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <p><%=i.rating %></p>
+                                    </div>
+                                </div>
+                                <p><%= i.elevation  %> m elevation</p>
+                                <p><%= i.date %></p>
+                                <div class="card_r2">
+                                    <i class="fa fa-inr" aria-hidden="true"></i>
+                                    <p><%= i.price  %></p>
+                                    <p><%= i.d_or_n  %></p>
                                 </div>
                             </div>
-                            <p>3150 m elevation</p>
-                            <p>6-11 Feb</p>
-                            <div class="card_r2">
-                                <i class="fa fa-inr" aria-hidden="true"></i>
-                                <p>100</p>
-                                <p>night</p>
-                            </div>
-                        </div>
-                    </div>  
+                        </div>  
+                  <%  } %>
                 </div>
             </div>
         <div class="footer">
