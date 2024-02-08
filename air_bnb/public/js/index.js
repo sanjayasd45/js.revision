@@ -13,14 +13,18 @@ document.addEventListener("click", (e) => {
 })
 
 
-const a = document.querySelectorAll('.categories');
-a[0].classList.add('activeColor');
-a.forEach(category => {
+const categories = document.querySelectorAll('.categories');
+categories[0].classList.add('activeColor');
+
+categories.forEach(category => {
     category.addEventListener('click', (e) => {
-        for(const item of a){
-            item.classList.remove('activeColor');
+        if (!category.classList.contains('activeColor')) {
+            categories.forEach(item => {
+                item.classList.remove('activeColor');
+            });
+            category.classList.add('activeColor');
         }
-        category.classList.add('activeColor');
     });
 });
+
 
