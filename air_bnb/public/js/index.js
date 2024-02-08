@@ -26,5 +26,3 @@ categories.forEach(category => {
         }
     });
 });
-
-
