@@ -22,20 +22,20 @@ mongoose.connect(`mongodb+srv://sanjayasd45:${password}@datacluster.lgoji1f.mong
     console.log(`Error connecting to MongoDB Atlas: ${err}`);
   });
 
-  let newCategory = 'Top of the world'
-  let data = null
-  let data1 = null
+  let newCategory = 'Top of the world';
+  let listingData = null;
+  let categoryData = null;
 app.get('/', async (req, res) => {
-    data = await Listing.find({category:newCategory})
-    data1 = await Category.find({})
-    res.render('index.ejs', {data, data1});
+  listingData = await Listing.find({category:newCategory});
+  categoryData = await Category.find({});
+  res.render('index.ejs', {listingData, categoryData});
 });
 app.get('/c/:_id',  async (req, res) => {
-  let el =  await Category.findById(req.params._id)
-  newCategory = el.tagline
-  res.redirect('/')
+  let el =  await Category.findById(req.params._id);
+  newCategory = el.tagline;
+  res.redirect('/');
 })
 
 app.listen(4000 , (res) => {
-    console.log("connected to the server at port 4000");
-})
+    console.log("connected, port -> 4000");
+});

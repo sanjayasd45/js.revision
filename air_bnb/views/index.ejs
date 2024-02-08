@@ -49,23 +49,23 @@
         </div>
         <div class="content">
             <div class="conIcons">
-                <div class="con_Icons">
-                    <div class="conIconsMain">
-                    <% for(j of data1) { %>
-                            <a  class="categories " href="/c/<%= j._id  %>">
-                                <i class="fa <%= j.icon  %>" aria-hidden="true"></i>
-                                <p><%= j.tagline %></p>
-                                <div class="lineDiv"></div>
-                            </a>
-                    <% } %>
-                </div>
+<div class="con_Icons">
+    <div class="conIconsMain">
+    <% for(j of categoryData) { %>
+            <a  class="categories " href="/c/<%= j._id  %>">
+                <i class="fa <%= j.icon  %>" aria-hidden="true"></i>
+                <p><%= j.tagline %></p>
+                <div class="lineDiv"></div>
+            </a>
+    <% } %>
+</div>
                     <div class="conIconsFilter">
                         <i class="fa fa-sliders" aria-hidden="true"></i>
                         <span>Filter</span>
                     </div>
                 </div>
                 <div class="conContent">
-                    <% for(i of data) { %>
+                    <% for(i of listingData) { %>
                         <div class="main">
                             <div class="card">
                                 <img src="<%= i.img  %>" alt="This is img">

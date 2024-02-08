@@ -14,33 +14,13 @@ document.addEventListener("click", (e) => {
 
 
 const a = document.querySelectorAll('.categories');
-let categoryData;
-// function finder() {
-//     a.forEach(category => {
-//         category.addEventListener('click', (e) => {
-//            let pTag = category.querySelector('p');
-//            let selectedContent = pTag.textContent;
-//            categoryData = selectedContent
-//         })
-//     })
-// }
-// function finder() {
-//     let firstElementProcessed = false; // Flag to track if the first element has been processed
-//     a.forEach(category => {
-//         category.addEventListener('click', (e) => {
-//             let pTag = category.querySelector('p');
-//             let selectedContent = pTag.textContent;
-//             categoryData = selectedContent;
-
-//             if (!firstElementProcessed) {
-//                 category.classList.add('active'); // Add the 'active' class to the first element
-//                 firstElementProcessed = true; // Update the flag
-//             }
-//         });
-//     });
-// }
-// finder()
-
-
-
+a[0].classList.add('activeColor');
+a.forEach(category => {
+    category.addEventListener('click', (e) => {
+        for(const item of a){
+            item.classList.remove('activeColor');
+        }
+        category.classList.add('activeColor');
+    });
+});
 
