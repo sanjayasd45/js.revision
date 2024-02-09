@@ -18,6 +18,7 @@ categories[0].classList.add('activeColor');
 
 categories.forEach(category => {
     category.addEventListener('click', (e) => {
+         e.preventDefault();
         if (!category.classList.contains('activeColor')) {
             categories.forEach(item => {
                 item.classList.remove('activeColor');
