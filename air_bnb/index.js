@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path')
 const {Listing , Category} = require('./models/bnb.js')
 const mongoose = require('mongoose')
-const password = encodeURIComponent("@123barisH");
+const password = encodeURIComponent("@123railwaY");
 
 
 

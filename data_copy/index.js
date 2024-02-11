@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, "public")))
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"))
 
-const password = encodeURIComponent("@123barisH");
+const password = encodeURIComponent("@123railwaY");
 
 mongoose.connect(`mongodb+srv://sanjayasd45:${password}@datacluster.lgoji1f.mongodb.net/your_database?retryWrites=true&w=majority`)
   .then(() => {

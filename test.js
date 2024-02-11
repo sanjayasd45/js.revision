@@ -1,25 +1,33 @@
-const express = require('express');
-const mongoose = require('mongoose');
-
-
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Replace 'your_connection_string' with the actual connection string from MongoDB Atlas
-const mongoURI = 'your_connection_string';
-
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
-
-// Check for successful connection
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => {
-  console.log('Connected to MongoDB Atlas');
+const optionsContainer = document.querySelector('.main__section-search-options');
+let selectedItems = []
+optionsContainer.addEventListener('click', (event) => {
+    const clickedElement = event.target;
+    if (clickedElement.classList.contains('main__section-search-options-topic') || clickedElement.classList.contains('main__section-search-options-level')) {
+        const content = clickedElement.textContent.trim();
+        if (!selectedItems.includes(content)) {
+            addItems(content);
+            selectedItems.push(content);
+        } else {
+            removeItems(content);
+            selectedItems = selectedItems.filter(item => item !== content);
+        }
+    }
 });
 
-// Your Express app logic goes here
+function addItems(contentToAdd) {
+    const newElement = document.createElement('span');
+    newElement.textContent = contentToAdd;
+    selected.appendChild(newElement);
+    newElement.classList.add("selected-items");
+}
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+function removeItems(contentToRemove) {
+    const children = selected.children;
+    for (let i = 0; i < children.length; i++) {
+        const child = children[i];
+        if (child.textContent === contentToRemove) {
+            selected.removeChild(child);
+            break; // No need to continue once the item is removed
+        }
+    }
+}
