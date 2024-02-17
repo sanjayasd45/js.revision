@@ -1,4 +1,3 @@
-
 document.addEventListener("click", (e) => {
     let drop = e.target.matches("[dropB]")
     const navElements = document.querySelectorAll('.navTopBtnOptC');
@@ -14,11 +13,10 @@ document.addEventListener("click", (e) => {
 
 
 const categories = document.querySelectorAll('.categories');
-categories[0].classList.add('activeColor');
+// categories[0].classList.add('activeColor');
 
 categories.forEach(category => {
     category.addEventListener('click', (e) => {
-         e.preventDefault();
         if (!category.classList.contains('activeColor')) {
             categories.forEach(item => {
                 item.classList.remove('activeColor');

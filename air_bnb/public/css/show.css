@@ -1,0 +1,11 @@
+.show_main{
+  padding: 0 4rem;
+}
+.show_main-post{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.show_main-post img {
+  
+}

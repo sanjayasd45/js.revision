@@ -10,55 +10,19 @@
 </head>
 <body>
     <div class="main01">
-        <div class="nav">
-            <div class="navTop">
-                <span ><img src="/assets/airbnblogo.png"></span>
-                <span class="navTopI">
-                    <a href="/">Stays</a>
-                    <a href="/">Experiences</a>
-                    <a href="/">Online Experiences</a>
-                </span>
-                <span class="navTopBtn flexR">
-                    <a href="/">Airbnb your home</a>
-                    <i class="fa fa-globe n" aria-hidden="true"></i>
-                    <div class="navTopBtnx">
-                        <div class="navTopBtnOpt flexR" dropB>
-                            <i class="fa fa-bars" aria-hidden="true" dropB></i>
-                            <div class="circle" dropB>
-                                
-                            </div>
-                        </div>
-                        <div class="navTopBtnOptC" dropB>
-                            <a href="/">Messages</a>
-                            <a href="/">Trips</a>
-                            <a href="/">Wishlists</a>
-                            <div class="sLine"></div>
-                            <a href="/">Airbnb your home</a>
-                            <a href="/">Account</a>
-                            <div class="sLine"></div>
-                            <a href="/">Help center</a>
-                            <a href="/">Log out</a>
-                        </div>
-                    </div>
-                </span>
-            </div>
-            <div class="navBottom">
-                
-            </div>
-            <div class="lineDiv"></div>
-        </div>
+        <%- include('components/nav.ejs')  %>
         <div class="content">
             <div class="conIcons">
-<div class="con_Icons">
-    <div class="conIconsMain">
-    <% for(j of categoryData) { %>
-            <a  class="categories " href="/c/<%= j._id  %>">
-                <i class="fa <%= j.icon  %>" aria-hidden="true"></i>
-                <p><%= j.tagline %></p>
-                <div class="lineDiv"></div>
-            </a>
-    <% } %>
-</div>
+                    <div class="con_Icons">
+                        <div class="conIconsMain">
+                        <% for(j of categoryData) { %>
+                                <a  class="categories " href="/c/<%= j._id  %>">
+                                    <i class="fa <%= j.icon  %>" aria-hidden="true"></i>
+                                    <p><%= j.tagline %></p>
+                                    <div class="lineDiv"></div>
+                                </a>
+                        <% } %>
+                    </div>
                     <div class="conIconsFilter">
                         <i class="fa fa-sliders" aria-hidden="true"></i>
                         <span>Filter</span>
@@ -68,7 +32,9 @@
                     <% for(i of listingData) { %>
                         <div class="main">
                             <div class="card">
-                                <img src="<%= i.img  %>" alt="This is img">
+                                <a href="/show/<%= i._id  %>">
+                                    <img src="<%= i.img  %>" alt="This is img">
+                                </a>
                                 <div class="card_r1">
                                     <p><%=i.location%></p>
                                     <p><%= i.category  %></p>
@@ -89,10 +55,7 @@
                   <%  } %>
                 </div>
             </div>
-        <div class="footer">
-            <p>© 2024 Airbnb</p>
-            <p>Support & resources</p>
-        </div>
+            <%- include('components/footer.ejs')  %>
     </div>
     <script src="js/index.js"></script>
 </body>

@@ -1,0 +1,19 @@
+<% layout('/layouts/boilerplate') -%>
+    <div >
+        <form method="POST" novalidate  action="/task" class="needs-validation  mt-4 p-2 border bg-opacity-50 rounded bg-primary offset-3 d-flex col-6">
+            <input type="text" required class="form-control" id="task" name="task" placeholder="Write something to add">
+            <button class="btn btn-dark mr-2">Add</button>
+        </form>
+    </div>
+    <div class="offset-2 mt-5 col-8 p-2 border rounded ">
+        <% for(task of data)  { %>
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <input type="checkbox">
+                <div class="col-10 "><%= task.task  %></div>
+                <form method="POST" action="/task/<%= task._id %>?_method=DELETE">
+                    <button  class="btn btn-dark">delete</button>
+                </form>
+            </div>
+            <hr>
+        <% } %>
+    </div>

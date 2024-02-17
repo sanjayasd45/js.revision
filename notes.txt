@@ -1,3 +1,7 @@
 C:\Program Files\MongoDB\Server\7.0\bin
 mongodb://127.0.0.1:27017/test
 mongodb+srv://sanjayasd45:<password>@datacluster.lgoji1f.mongodb.net/?retryWrites=true&w=majority
+
+
+css - tailwind
+javascript - radix 

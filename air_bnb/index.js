@@ -17,6 +17,9 @@ app.use(express.static(path.join(__dirname, "public")))
 mongoose.connect(`mongodb+srv://sanjayasd45:${password}@datacluster.lgoji1f.mongodb.net/bnb?retryWrites=true&w=majority`)
   .then(() => {
     console.log("Connected to MongoDB Atlas");
+    app.listen(4000 , (res) => {
+      console.log("connected, port -> 4000");
+    });
   })
   .catch((err) => {
     console.log(`Error connecting to MongoDB Atlas: ${err}`);
@@ -32,10 +35,16 @@ app.get('/', async (req, res) => {
 });
 app.get('/c/:_id',  async (req, res) => {
   let el =  await Category.findById(req.params._id);
+  console.log(el);
   newCategory = el.tagline;
   res.redirect('/');
 })
 
-app.listen(4000 , (res) => {
-    console.log("connected, port -> 4000");
+app.get('/show/:_id', async (req, res) => {
+  try {
+    const post = await Listing.findById(req.params._id);
+    res.render('show.ejs',{post});
+  } catch (error) {
+    console.error('Error:', error);
+  }
 });
