@@ -9,7 +9,7 @@
         <% for(task of data)  { %>
             <div class="d-flex justify-content-between align-items-center flex-wrap">
                 <input type="checkbox">
-                <div class="col-10 "><%= task.task  %></div>
+                <div class="col-10 task" contenteditable="true" id="<%= task._id  %>" match><%= task.task  %></div>
                 <form method="POST" action="/task/<%= task._id %>?_method=DELETE">
                     <button  class="btn btn-dark">delete</button>
                 </form>

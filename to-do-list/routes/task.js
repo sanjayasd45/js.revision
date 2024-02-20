@@ -15,12 +15,13 @@ router.post('/', async(req, res) => {
     newTask.save()
     res.redirect("/task")
 })
-// router.put('/:id', async(req, res) => {
-//     const {id} = req.params;
-//     const data = req.body;
-//     const updatedTask = await Task.findByIdAndUpdate(id, data);
-//     res.redirect("/task")
-// })
+router.put('/:id', async(req, res) => {
+    const {id} = req.params;
+    const data = req.body;
+    const updatedTask = await Task.findByIdAndUpdate(id, data);
+    updatedTask.save()
+    res.redirect("/task")
+})
 router.delete('/:id', async(req, res) => {
     const {id} = req.params;
     let deleted = await Task.findByIdAndDelete(id)

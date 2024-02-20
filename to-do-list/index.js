@@ -5,6 +5,9 @@ const task = require("./routes/task.js")
 const path = require('path')
 const ejsMate = require("ejs-mate");
 const methodOverride = require('method-override')
+const bodyParser = require("body-parser")
+const cors = require("cors")
+
 const port = 3000
 
 const app = express();
@@ -16,6 +19,8 @@ mongoose.connect(`mongodb+srv://sanjayasd45:${password}@datacluster.lgoji1f.mong
         })
      })
 
+app.use(bodyParser.json())
+app.use(cors())
 app.engine('ejs', ejsMate)
 app.set("view engine", 'ejs')
 app.use(methodOverride('_method'))
